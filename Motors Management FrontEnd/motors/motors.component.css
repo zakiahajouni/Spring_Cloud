@@ -1,0 +1,29 @@
+/* Custom styles for table */
+.table {
+  margin-top: 20px;
+}
+
+.table th {
+  background-color: #f8f9fc;
+  text-align: center;
+}
+
+.table td {
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* Styles for buttons */
+.btn-group .btn {
+  margin-right: 5px;
+}
+
+/* Remove the last button's margin to fix alignment */
+.btn-group .btn:last-child {
+  margin-right: 0;
+}
+
+/* Rounded images for the 'Image' column */
+.rounded-circle {
+  border-radius: 50%; /* creates circular images */
+}

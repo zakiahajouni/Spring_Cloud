@@ -1,0 +1,61 @@
+.custom-register-container {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.register-form {
+  background: #fff;
+  padding: 30px;
+}
+
+.icon-input {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.icon-input i {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c757d; /* Or any other color */
+}
+
+.icon-input .form-control {
+  padding-left: 40px;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+}
+
+.icon-input .form-control:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

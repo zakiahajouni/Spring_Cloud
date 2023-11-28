@@ -1,0 +1,53 @@
+<div class="container mt-5">
+  <h1 class="mt-5 text-center ">Motor List</h1>
+  <div class="  mb-4">
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Date</th>
+            <th>Types</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let motors of motors">
+          <tr>
+            <td>{{ motors.idMotors }}</td>
+            <td><img class="rounded-circle img-responsive"
+              src="{{ apiurl + '/image/load/' + motors.idMotors }}"
+              alt="Motor Image"
+              style="height: 50px; width: 50px; object-fit: cover;">
+              </td>
+            <td>{{ motors.nomMotors }}</td>
+            <td>{{ motors.prixMotors }}</td>
+            <td>{{ motors.dateCreation | date: 'dd/MM/yyyy' }}</td>
+            <td>{{ motors.type?.nameTyp }}</td>
+
+            <td>
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <a
+                  *ngIf="authService.isAdmin()"
+                  class=" "
+                  (click)="supprimerMotors(motors)"
+                >
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAWklEQVR4nGNgGAWDGBxnYGD4j4aPUcvww1gMJxcfHiiLD1ErNIYv+E8lPGoxQTAa1P9HExfDaHZiGC1AGEaLTKLAyCsyH1PB0kfkWOxJoeUgSz3IsXgUDA8AAHlcbV33qhrwAAAAAElFTkSuQmCC">
+                </a>
+                <a
+                  *ngIf="authService.isAdmin()"
+                  class=" "
+                  [routerLink]="['/updateMotors', motors.idMotors]"
+                >
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB8UlEQVR4nO2by0rDQBSGv3Gva8F1i+6Vvoq2S7FvIBVEEFcFxZVCQZ9C3Am+gPgGuhLceaPuFEYKEYaQpGk7Sc90zg9nkZKQ839zyTkNAZVKpVJNpA2gC/QExT7QpGKtA/eAFRpPVZpvAZ8CTM4FwArw6tzoB7gBToG+kDgCGlUBOHTMvwGbRKZHB8AuEWroAFglQlknopRVAOgMsLoE0D3AEqlsYHuAAc6Bb+AsOY4GgAEuUzlfA0sxADAZ5r1AsAEAKDI/MwQrHEAZ8zNBsIIBjMwPUjmWOTaLAMBkjPxVMsLub6PzLmaZCVYgADNmZNM5jzs/OADtMWaycs6C0A4VQGfMSOblnIawHSoAkyS/kzONi3L+v3YUwS6BWnO2CgCdAVaXALoHWMLRRPuWSZ6r0z5Siq4NAkDbU1FRqqqSCKDjqawsVVVJXQKDuhqLmjRx7WIKWsZ0a5nXgkrSVMWbqePPhZo0dfVqMmZCXkgceS/luykBQbJ5L/2LKYAg3by3Bs5kQAjBvNcO1iSvl4a+XjPVpBBbeK9SAOgMQJcAugegmyARas3ZAL+IUF0HwAORqQW8OwAOqrpRM/lKoyckToBb4Ncx/wIsVwXguWTLPK/4ALaqMi8dwF0d3w81kq80+kLiGNirw7hKpVKxSPoDcX9CnSiKRhMAAAAASUVORK5CYII=" width="20 px" class="mx-3">
+                </a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

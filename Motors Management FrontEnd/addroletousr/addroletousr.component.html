@@ -1,0 +1,35 @@
+<div class="container mt-5">
+  <form>
+      <div class="form-row">
+          <div class="form-group col-md-12">
+              <label for="username"><b>Username</b></label>
+              <input type="text" [(ngModel)]="User.username" name="id" class="form-control" id="username">
+          </div>
+      </div>
+
+      <div class="form-group">
+          <label for="currentRole">  <b>Role</b> </label>
+          <table class="table table-bordered">
+              <tbody>
+                  <tr *ngFor="let r of User.roles">
+                      <td>{{ r.role }}</td>
+                      <td>
+                          <button class="btn btn-sm" (click)="removeRoleFromUsers(r.role_id)">
+                              <img width="30" height="30" src="https://img.icons8.com/color/48/delete-forever.png" alt="delete-forever"/>
+                          </button>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+
+      <div class="form-group">
+          <label for="roleSelect"> <b>Select Role to Add</b></label>
+          <select [(ngModel)]="idOfRole" name="roleSelectt" class="form-control">
+              <option *ngFor="let rr of roles" [ngValue]="rr">{{rr.role}}</option>
+          </select>
+      </div>
+
+      <button type="button" class="btn btn-dark" (click)="addRoleToUser()"><b>Add Role for this User</b></button>
+  </form>
+</div>
